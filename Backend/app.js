@@ -6,7 +6,7 @@ const userRoutes=require('./routes/user.routes');
 const captainRoutes=require('./routes/captain.routes');
 const app=express();
 const cookieParser = require('cookie-parser');
-const connectToDb = require('./middlewares/db/db');
+const connectToDb = require('./db/db');
 connectToDb();
 
 
