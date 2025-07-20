@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import  { UserDataContext } from "../Context/UserContext";
+import { UserDataContext } from "../context/UserContext";
 
 const UserSignup = () => {
   const [email, setEmail] = useState("");
@@ -30,6 +30,7 @@ const UserSignup = () => {
 
     if (response.status === 201) {
       const data = response.data;
+      localStorage.setItem("token", data.token);
       setUser(data.user);
       navigate("/home");
     }
